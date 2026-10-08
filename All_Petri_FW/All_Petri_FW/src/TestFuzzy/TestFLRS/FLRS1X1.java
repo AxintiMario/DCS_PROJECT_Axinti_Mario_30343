@@ -31,7 +31,7 @@ public class FLRS1X1 {
 		pn.PetriNetName = "Main Petri";
 		pn.NetworkPort = 1081;
 
-		pn.SetInputFile("D:\\PetriInputData\\test3.txt");
+		pn.SetInputFile("/Users/mario/FACULTATE/AN_4/DCS/DCSPROJECT/DCS_Project/All_Petri_FW/All_Petri_FW/src/TestFuzzy/TestFLRS/text.txt");
 		DataFuzzy p1 = new DataFuzzy();
 		p1.SetName("P1");
 		//p1.SetValue(new Fuzzy(0.1F));
