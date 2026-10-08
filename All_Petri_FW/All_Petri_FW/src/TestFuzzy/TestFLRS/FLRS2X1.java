@@ -21,11 +21,18 @@ import Enumerations.TransitionOperation;
 public class FLRS2X1 {
 	public static void main (String []args) {
 		
-		FLRS flrs2x1 = new FLRS(new FV(FZ.PL), new FV(FZ.PM), new FV(FZ.ZR), new FV(FZ.NL),new FV(FZ.ZR), 
-	   			new FV(FZ.PL), new FV(FZ.NM), new FV(FZ.PL), new FV(FZ.PL), new FV(FZ.NM), 
-	   			new FV(FZ.NL), new FV(FZ.PL), new FV(FZ.ZR), new FV(FZ.ZR), new FV(FZ.PL), 
-	   			new FV(FZ.ZR), new FV(FZ.ZR), new FV(FZ.NM), new FV(FZ.PM), new FV(FZ.NL),
-	   			new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.ZR), new FV(FZ.NM),	new FV(FZ.PL));
+		FLRS flrs2x1 = new FLRS(new FV(FZ.ZR), new FV(FZ.NL), new FV(FZ.FF), new FV(FZ.PL),new FV(FZ.NM),
+	   							new FV(FZ.NM), new FV(FZ.PL), new FV(FZ.PM), new FV(FZ.FF), new FV(FZ.FF),
+								new FV(FZ.NL), new FV(FZ.PL), new FV(FZ.ZR), new FV(FZ.ZR), new FV(FZ.PL),
+	   							new FV(FZ.ZR), new FV(FZ.ZR), new FV(FZ.PL), new FV(FZ.PM), new FV(FZ.NL),
+	   							new FV(FZ.NL), new FV(FZ.PL), new FV(FZ.PM), new FV(FZ.NM),	new FV(FZ.ZR));
+
+
+		FLRS reader = new FLRS(new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+								new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+								new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+								new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL),
+								new FV(FZ.NL), new FV(FZ.NM), new FV(FZ.ZR), new FV(FZ.PM), new FV(FZ.PL));
 
 		flrs2x1.Print();
 		
@@ -68,8 +75,9 @@ public class FLRS2X1 {
 				ArrayList<String> Output = new ArrayList<>();
 				Output.add("P3");
 
-				
-				grdT1.Activations.add(new Activation(t1, flrs2x1, input, TransitionOperation.FLRS, Output));
+
+				//change flrs2x1 with reader
+				grdT1.Activations.add(new Activation(t1, flrs2x1, input, TransitionOperation.FLRS, Output)); //change flrs2x1 with reader
 				
 				t1.GuardMappingList.add(grdT1);
 
