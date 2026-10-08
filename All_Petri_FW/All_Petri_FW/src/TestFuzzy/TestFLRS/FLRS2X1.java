@@ -42,12 +42,12 @@ public class FLRS2X1 {
 
 		DataFuzzy p1 = new DataFuzzy();
 		p1.SetName("P1");
-		p1.SetValue(new Fuzzy(0.1F));
+		p1.SetValue(new Fuzzy(1F));
 		pn.PlaceList.add(p1);
 
 		DataFuzzy p2 = new DataFuzzy();
 		p2.SetName("P2");
-		p2.SetValue(new Fuzzy(0.2F));
+		p2.SetValue(new Fuzzy(1F));
 		pn.PlaceList.add(p2);
 
 		DataFuzzy p3 = new DataFuzzy();
@@ -69,7 +69,7 @@ public class FLRS2X1 {
 
 				ArrayList<PlaceNameWithWeight> input = new ArrayList<>();
 				input.add(new PlaceNameWithWeight("P1", 1F));
-				input.add(new PlaceNameWithWeight("P2", -1F));
+				input.add(new PlaceNameWithWeight("P2", 1F));
 
 				
 				ArrayList<String> Output = new ArrayList<>();
@@ -77,7 +77,7 @@ public class FLRS2X1 {
 
 
 				//change flrs2x1 with reader
-				grdT1.Activations.add(new Activation(t1, flrs2x1, input, TransitionOperation.FLRS, Output)); //change flrs2x1 with reader
+				grdT1.Activations.add(new Activation(t1, reader, input, TransitionOperation.FLRS, Output)); //change flrs2x1 with reader
 				
 				t1.GuardMappingList.add(grdT1);
 
